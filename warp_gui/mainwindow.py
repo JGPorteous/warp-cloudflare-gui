@@ -129,6 +129,7 @@ class GUI:
                 self.set_sub_status_message('private')
                 self.connected = True
                 self.set_tray_icon(True)
+                self.__menu_tray_connect.setText("Disconnect")
             elif status.startswith('Disconnected') or \
                     status.startswith('Unable to connect'):
                 self.toggle.setChecked(False)
@@ -136,6 +137,7 @@ class GUI:
                 self.ui.label_status_message.setStyleSheet(u"color:rgb(255, 80, 57);")
                 self.connected = False
                 self.set_tray_icon(False)
+                self.__menu_tray_connect.setText("Connect")
 
             self.last_status = status
 
